@@ -1,9 +1,22 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
+import { BACK_ARROW } from "../assets"
 export const Navbar = ({ exitModalOpen = () => { } }) => {
+    let location = useLocation()
     return (
         <>
-            <nav className="navbar navbar-dark bg-dark">
+            <nav className="navbar navbar-dark bg-dark mi-nav">
                 <div className="container">
+                    {location.pathname !== "/" &&
+                        <div>
+                            <Link
+                                style={{}}
+                                className="btn btn-sm btn-light"
+                                to="/"
+                            > <img width="20" src={BACK_ARROW} alt="<-" />
+                                <span className="ms-2">Go Home</span>
+                            </Link>
+                        </div>
+                    }
                     <Link to="/" className="navbar-brand d-flex justify-content-center align-items-center" href="#">
                         <img
                             src="/logo.png"
@@ -14,10 +27,12 @@ export const Navbar = ({ exitModalOpen = () => { } }) => {
                         <span className="ms-4">Zeus</span>
                     </Link>
                     <div >
-                        <button
-                            className="btn btn-sm btn-danger"
-                            onClick={exitModalOpen}
-                        >cerrar</button>
+                        {location.pathname === "/" &&
+                            <button
+                                className="btn btn-sm btn-danger"
+                                onClick={exitModalOpen}
+                            >Cerrar Session</button>
+                        }
                     </div>
                 </div>
             </nav>

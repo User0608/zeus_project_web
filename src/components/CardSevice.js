@@ -1,21 +1,15 @@
 import React from 'react'
-import { USUARIO_ICON } from '../assets'
 import { ItemService } from './ItemService'
 
-export const CardSevice = () => {
+export const CardSevice = ({ modules = [] }) => {
     return (
         <div class="card mb-3">
             <div class="card-header">Operaciones</div>
             <div class="card-body text-dark">
                 <div className="row">
-                    <ItemService title="Usuarios" icon={USUARIO_ICON} path="/usuarios"/>
-                    <ItemService />
-                    <ItemService />
-                    <ItemService />
-                    <ItemService />
-                    <ItemService />
-                    <ItemService />
-                    <ItemService />
+                    {modules.map(({ title, icon, path }) => (
+                        <ItemService title={title} icon={icon} path={path} />
+                    ))}
                 </div>
             </div>
         </div>

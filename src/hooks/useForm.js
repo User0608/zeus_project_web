@@ -9,9 +9,9 @@ const useForm = (initialValue = {}) => {
         setFromInputs({
             ...formInputs,
             [target.name]: target.value
-        })
+        }) 
     }
-    return [formInputs, handleInputChange, reset]
+    return [formInputs, handleInputChange, reset, setFromInputs]
 }
 
-export default useForm;
+export default useForm; 

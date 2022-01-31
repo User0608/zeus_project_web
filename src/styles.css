@@ -1,3 +1,9 @@
+body {
+    overscroll-behavior: contain;
+}
+.cred{
+    color: red;
+}
 .mymodal{
     background-color: rgba(0, 0, 0, 0.096);
     left: 0;
@@ -70,4 +76,53 @@
 .menum{
     width: 240px;
     margin-left: 10px;
+}
+.scrol_container{      
+    max-height: 400px;
+    overflow: scroll;
+}
+.mytable{
+    width:850px;
+}
+.load{
+    color: green;
+}
+/* Notify */
+.notify{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 400px;
+    height: 35px;    
+    position: fixed;   
+    bottom:10px;   
+    right: 10px;
+    z-index: 100;     
+}
+.notify-message{ 
+    color: white;
+    font-weight:200;
+}
+.notify-button{
+    padding:0 10px 3px  10px;    
+    border-radius: 4px;
+    background: red;
+    font-weight: 700;
+    color: white;
+}
+.notify-button:hover{
+    background-color:rgb(255, 40, 40) ;
+}
+/*  */
+
+
+.table_scroll{
+    min-width:1000px;
+    overflow: scroll;
+}
+.mi-nav{
+    width: auto;
+    overflow: hidden;
 }

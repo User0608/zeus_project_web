@@ -15,6 +15,12 @@ export const managerResponse = async (response) => {
             message = res.message
             status = false
     }
+    if (res?.message === "el token es invalido") {
+        alert("la sesión ha espirado")
+        localStorage.removeItem("session")
+        document.location.pathname = '/login'
+        return [null, false, "pro favor inicié sesión nuevamente", 203]
+    }
     // TODO Logica
     return [res, status, message, statusCode]
 }
